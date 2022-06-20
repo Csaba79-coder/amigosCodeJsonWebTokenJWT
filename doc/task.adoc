@@ -42,11 +42,11 @@ because of request.getParameter("username") & request.getParameter("password") i
 
 typing the key and value:
 
-image::../../git-practice-greenfox/doc/image-2022-06-19-20-07-19-849.png[]
+image::image-2022-06-20-19-48-59-985.png[]
 
 in the Headers we can see access and refresh token:
 
-image::../../git-practice-greenfox/doc/image-2022-06-19-20-10-45-547.png[]
+image::image-2022-06-20-19-50-01-390.png[]
 
 when we have the token:
 
@@ -54,30 +54,29 @@ https://jwt.io/
 
 copy the token, paste it here:
 
-image::../../git-practice-greenfox/doc/image-2022-06-19-20-14-25-834.png[]
+image::image-2022-06-20-19-50-34-767.png[]
 
 and then we can check refresh token the same way:
 
-image::../../git-practice-greenfox/doc/image-2022-06-19-20-16-10-001.png[]
+image::image-2022-06-20-19-51-08-173.png[]
 
 Because of this refactor in CustomAuthenticationFilter:
 
-image::../../git-practice-greenfox/doc/image-2022-06-19-20-56-02-871.png[]
+image::image-2022-06-20-19-53-19-425.png[]
 
 the result is as follows (much nicer format!):
 
-image::../../git-practice-greenfox/doc/image-2022-06-19-20-56-57-101.png[]
+image::image-2022-06-19-20-56-57-101.png[]
 
 CustomAuthenticationFilter customAuthenticationFilter = new CustomAuthenticationFilter(authenticationManagerBean());
 
 customAuthenticationFilter.setFilterProcessesUrl("/api/login");
 this overrides, and that reason new postman request as follows:
 
-image::../../git-practice-greenfox/doc/image-2022-06-19-21-11-18-694.png[]
+image::image-2022-06-19-21-11-18-694.png[]
 
 Order:
 
 - first I put what I want to permit.
 - then separated different permissions for roles.
 - the end: the authenticated!
-
